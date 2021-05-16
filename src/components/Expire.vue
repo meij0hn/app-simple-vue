@@ -38,9 +38,9 @@
 </template>
 
 <script>
-// import axios from "axios";
+import axios from "axios";
 import Vue from "vue";
-const midtransClient = require('midtrans-client');
+
 
 import loading from "vuejs-loading-screen";
 Vue.use(loading, {
@@ -67,23 +67,29 @@ export default {
   },
   methods: {
     onCreatePost() {
-      this.$isLoading(true); // show loading screen
+      // this.$isLoading(true); // show loading screen
       
-      let apiClient = new midtransClient.Snap({
-          isProduction : true,
-          serverKey : 'Mid-server-5SjUm4DPCDKqf_PAMUT2Ht4E',
-          clientKey : 'Mid-client-MGKpnVja6krOzV0L'
-      });
-
-      apiClient.transaction.status(this.form.orderCode)
-        .then((response)=>{
-            console.log(response);
-            this.$isLoading(false); // hide loading screen
+      axios
+        .post(
+          "http://localhost:3002/api/midtrans/status/" + this.orderCode
+        )
+        .then(response => {
+          console.log(response);
+          // this.$isLoading(false); // hide loading screen
+          // this.mulai = true;
+          // this.info = response;
+          // this.success = this.info.data.success;
+          // this.resetForm(); // reset
+          // this.focusInput();
         })
         .catch(error => {
           console.log(error);
-          this.$isLoading(false); // hide loading screen
+          // this.$isLoading(false); // hide loading screen
+          // this.mulai = true;
+          // this.info = error.response.data.error.message;
+          // this.success = false;
         });
+
     },  
     resetForm() {
       console.log("Reset Form");
