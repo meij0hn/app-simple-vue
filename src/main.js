@@ -12,6 +12,7 @@ import CekPaymentOrder from "./components/CekPaymentOrder.vue";
 import UnitReserved from "./components/UnitReserved.vue";
 import Expire from "./components/Expire.vue";
 import Notif from "./components/NotifMidtransToE3.vue";
+import Report from "./components/Report.vue";
 
 Vue.use(VueRouter);
 Vue.config.productionTip = false;
@@ -49,6 +50,10 @@ const router = new VueRouter({
     {
       path: "/Notif",
       component: Notif
+    },
+    {
+      path: "/Report",
+      component: Report
     },
   ]
 });

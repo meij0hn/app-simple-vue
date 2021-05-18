@@ -18,10 +18,16 @@
       >UnitReserved</a
     >
 
-    <a
+    <!-- <a
       class="flex-sm-fill text-sm-center nav-link"
       href="http://139.255.31.4:2001/ReportServer/Pages/ReportViewer.aspx?%2fMSU%2fData+Center%2f%5bDC%5d+008+-+Booking+In+Proses+Detail+Report&rs:Command=Render"
       target="_blank"
+      >Report Booking In Process Detail</a
+    > -->
+
+    <a
+      class="flex-sm-fill text-sm-center nav-link"
+      href="/#/Report"
       >Report Booking In Process Detail</a
     >
 
