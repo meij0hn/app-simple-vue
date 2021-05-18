@@ -71,7 +71,7 @@ export default {
       
       axios
         .post(
-          "http://mrmjohn.com:3002/api/midtrans/expire?ordercode=" + this.order
+          "http://mrmjohn.com:3002/api/midtrans/status?ordercode=" + this.form.order
         )
         .then(response => {
           console.log(response);
