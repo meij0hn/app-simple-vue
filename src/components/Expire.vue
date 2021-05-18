@@ -54,7 +54,7 @@ export default {
   data() {
     return {
       form: {
-        order: "E3-OB-RHM-0009261"
+        order: ""
       },
       info: null,
       success: null,
