@@ -6,10 +6,10 @@
         <div class="form-group">
             <input
             type="text"
-            name="orderCode"
+            name="order"
             class="form-control"
-            placeholder="orderCode"
-            v-model="form.orderCode"
+            placeholder="order"
+            v-model="form.order"
             ref="fcs"
             required
             />
@@ -21,13 +21,13 @@
 
         <div :class="flex">
             <div class="alert alert-success" v-if="success === true">
-            <p>Status : {{ info.data.result.status_message }}</p>
-            <p>OrderCode : {{ info.data.result.order_id }}</p>
-            <p>Amount : {{ info.data.result.gross_amount }}</p>
-            <p>Payment Type : {{ info.data.result.payment_type }}</p>
-            <p>Transaction Time : {{ info.data.result.transaction_time }}</p>
-            <p>Virtual Account : {{ info.data.result.permata_va_number }}</p>
-            <p>Transaction Status : {{ info.data.result.transaction_status }}</p>
+            <p>Status : {{ info.data.status_message }}</p>
+            <p>OrderCode : {{ info.data.order_id }}</p>
+            <p>Amount : {{ info.data.gross_amount }}</p>
+            <p>Payment Type : {{ info.data.payment_type }}</p>
+            <p>Transaction Time : {{ info.data.transaction_time }}</p>
+            <p>Virtual Account : {{ info.data.permata_va_number }}</p>
+            <p>Transaction Status : {{ info.data.transaction_status }}</p>
             </div>
             <div class="alert alert-success" v-if="success === false">
             {{ info }}
@@ -54,7 +54,7 @@ export default {
   data() {
     return {
       form: {
-        orderCode: ""
+        order: "E3-OB-RHM-0009261"
       },
       info: null,
       success: null,
@@ -67,27 +67,27 @@ export default {
   },
   methods: {
     onCreatePost() {
-      // this.$isLoading(true); // show loading screen
+      this.$isLoading(true); // show loading screen
       
       axios
         .post(
-          "http://localhost:3002/api/midtrans/status/" + this.orderCode
+          "http://mrmjohn.com:3002/api/midtrans/expire?ordercode=" + this.order
         )
         .then(response => {
           console.log(response);
-          // this.$isLoading(false); // hide loading screen
-          // this.mulai = true;
-          // this.info = response;
-          // this.success = this.info.data.success;
-          // this.resetForm(); // reset
-          // this.focusInput();
+          this.$isLoading(false); // hide loading screen
+          this.mulai = true;
+          this.info = response;
+          this.success = true;
+          this.resetForm(); // reset
+          this.focusInput();
         })
         .catch(error => {
           console.log(error);
-          // this.$isLoading(false); // hide loading screen
-          // this.mulai = true;
-          // this.info = error.response.data.error.message;
-          // this.success = false;
+          this.$isLoading(false); // hide loading screen
+          this.mulai = true;
+          this.info = false;
+          this.success = false;
         });
 
     },  
