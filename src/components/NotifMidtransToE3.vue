@@ -1,5 +1,5 @@
 <template>
-    <div class="col-md-4 pl-0">
+  <div class="col-md-4 pl-0">
     <h2 class="mb-5">Notification Midtrans to E3</h2>
     <form @submit.prevent="onCreatePost">
       <div class="form-group">

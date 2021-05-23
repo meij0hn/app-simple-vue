@@ -7,12 +7,15 @@ import VueRouter from "vue-router";
 import Home from "./components/Home.vue";
 import Logout from "./components/Logout.vue";
 import Err from "./components/404.vue";
-// import InsertTRSoldUnitPerBookcode from "./components/InsertTRSoldUnitPerBookcode.vue";
+import InsertTRSoldUnitPerBookcode from "./components/InsertTRSoldUnitPerBookcode.vue";
 import CekPaymentOrder from "./components/CekPaymentOrder.vue";
 import UnitReserved from "./components/UnitReserved.vue";
 import Expire from "./components/Expire.vue";
 import Notif from "./components/NotifMidtransToE3.vue";
 import Report from "./components/Report.vue";
+import PPN from "./components/PPN.vue";
+import RR from "./components/RR.vue";
+
 
 Vue.use(VueRouter);
 Vue.config.productionTip = false;
@@ -31,10 +34,10 @@ const router = new VueRouter({
       path: "/logout",
       component: Logout
     },
-    // {
-    //   path: "/InsertTRSoldUnitPerBookcode",
-    //   component: InsertTRSoldUnitPerBookcode
-    // },
+    {
+      path: "/InsertTRSoldUnitPerBookcode",
+      component: InsertTRSoldUnitPerBookcode
+    },
     {
       path: "/CekPaymentOrder",
       component: CekPaymentOrder
@@ -55,6 +58,16 @@ const router = new VueRouter({
       path: "/Report",
       component: Report
     },
+    {
+      path: "/PPN",
+      component: PPN
+    },
+    {
+      path: "/RR",
+      component: RR
+    },
+
+    
   ]
 });
 
