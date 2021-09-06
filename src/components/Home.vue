@@ -47,6 +47,12 @@
       href="/#/RR"
       >RegenerateandRecalculate</a
     >
+
+    <a
+      class="flex-sm-fill text-sm-center nav-link"
+      href="/#/RollbackCancel"
+      >Rollback Unit Cancel</a
+    >
   </nav>
 </template>
 

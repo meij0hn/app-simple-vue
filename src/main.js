@@ -15,6 +15,7 @@ import Notif from "./components/NotifMidtransToE3.vue";
 import Report from "./components/Report.vue";
 import PPN from "./components/PPN.vue";
 import RR from "./components/RR.vue";
+import Rollback from "./components/Rollback.vue";
 
 
 Vue.use(VueRouter);
@@ -65,6 +66,10 @@ const router = new VueRouter({
     {
       path: "/RR",
       component: RR
+    },
+    {
+      path: "/RollbackCancel",
+      component: Rollback
     },
 
     
